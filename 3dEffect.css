@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.effect-1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgb(16, 26, 31);
+}
+.effect-1 h1{
+    color: #fff;
+    font-size: 2vw;
+    margin: 4vw 0;
+}
+.effect3d{
+    position: relative;
+    width: 30vw;
+    height: 30vw;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+.effect3d img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+    z-index: calc(1 + var(--i));
+    opacity: calc(1 - (0.2 * var(--j)));
+}
+.effect3d:hover img{
+    transform: rotate(-30deg) skew(25deg) translateX(calc(30px * var(--i))) translateY(calc(-30px * var(--i)));
+}
